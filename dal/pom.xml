@@ -12,6 +12,12 @@
 
     <dependencies>
 
+        <!-- pikaqiu -->
+        <dependency>
+            <groupId>com.pikaqiu.basic</groupId>
+            <artifactId>framework</artifactId>
+        </dependency>
+
         <!-- mybatis -->
         <dependency>
             <groupId>org.mybatis</groupId>
@@ -26,6 +32,18 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus</artifactId>
+        </dependency>
+
+        <!-- postgresql -->
+        <!--<dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+        </dependency>-->
+
+        <!-- mysql -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
     </dependencies>
