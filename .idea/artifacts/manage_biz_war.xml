@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="manage-biz:war">
+    <output-path>$PROJECT_DIR$/manage/manage-biz/target</output-path>
+    <root id="archive" name="manage-biz-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="manage-biz:war exploded" />
+    </root>
+  </artifact>
+</component>
