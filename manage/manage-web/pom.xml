@@ -58,12 +58,6 @@
             <artifactId>thymeleaf-spring3</artifactId>
         </dependency>
 
-        <!-- jersey-spring -->
-        <dependency>
-            <groupId>org.glassfish.jersey.ext</groupId>
-            <artifactId>jersey-spring3</artifactId>
-        </dependency>
-
     </dependencies>
 
     <build>

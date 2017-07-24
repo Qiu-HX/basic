@@ -19,5 +19,10 @@ public class WebRestApplication extends ResourceConfig {
 
         //注册Response过滤器
         register(GenericResponseFilter.class);
+
+        //注册swagger服务
+        register(io.swagger.jaxrs.listing.ApiListingResource.class);
+        register(io.swagger.jaxrs.listing.AcceptHeaderApiListingResource.class);
+        register(io.swagger.jaxrs.listing.SwaggerSerializers.class);
     }
 }

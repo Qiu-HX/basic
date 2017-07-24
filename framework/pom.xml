@@ -12,6 +12,12 @@
 
     <dependencies>
 
+        <!-- jersey-spring -->
+        <dependency>
+            <groupId>org.glassfish.jersey.ext</groupId>
+            <artifactId>jersey-spring3</artifactId>
+        </dependency>
+
         <!-- jersey  -->
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
@@ -32,6 +38,12 @@
         <dependency>
             <groupId>org.glassfish.jersey.media</groupId>
             <artifactId>jersey-media-multipart</artifactId>
+        </dependency>
+
+        <!-- swagger-jersey -->
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-jersey2-jaxrs</artifactId>
         </dependency>
 
     </dependencies>

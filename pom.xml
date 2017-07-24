@@ -25,6 +25,7 @@
         <thymeleaf.version>3.0.3.RELEASE</thymeleaf.version>
         <jersey.spring.version>2.17</jersey.spring.version>
         <glassfish.jersey.version>2.17</glassfish.jersey.version>
+        <io.swagger.version>1.5.10</io.swagger.version>
     </properties>
 
     <!-- dependencyManagement里只是声明依赖，并不实现引入，因此子项目需要显示的声明需要用的依赖 -->
@@ -152,6 +153,13 @@
                 <groupId>org.glassfish.jersey.media</groupId>
                 <artifactId>jersey-media-multipart</artifactId>
                 <version>${glassfish.jersey.version}</version>
+            </dependency>
+
+            <!-- swagger-jersey -->
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-jersey2-jaxrs</artifactId>
+                <version>${io.swagger.version}</version>
             </dependency>
 
         </dependencies>

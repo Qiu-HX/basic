@@ -10,16 +10,6 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!--<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>-->
-    <!--<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"></bean>-->
-
-    <!-- ViewResolver -->
-    <!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
-        <property name="prefix" value="/WEB-INF/jsp/"/>
-        <property name="suffix" value=".jsp"/>
-    </bean>-->
-
     <!-- 使用thymeleaf解析 -->
     <bean id="templateResolver" class="org.thymeleaf.spring3.templateresolver.SpringResourceTemplateResolver">
         <property name="prefix" value="/WEB-INF/templates/"/>
@@ -44,11 +34,15 @@
     <mvc:resources mapping="/js/**" location="/WEB-INF/js/"/>
     <mvc:resources mapping="/lib/**" location="/WEB-INF/lib/"/>
 
+    <!-- API 文档-->
+    <mvc:resources mapping="/swagger/**" location="/WEB-INF/swagger/"/>
+    <mvc:resources mapping="/api/swagger.json" location="/api/swagger.json"/>
+
     <!-- 自动注册基于注解风格的处理器需要的 RequestMappingHandlerMapping、RequestMappingHandlerAdapter -->
     <mvc:annotation-driven/>
 
     <!-- 到哪里去找标记为@Controller 的Controller 控制器 -->
-    <!--<context:component-scan base-package="com.pikaqiu.manage.web.controller">
+    <context:component-scan base-package="com.pikaqiu.manage.web.controller">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>
-    </context:component-scan >-->
+    </context:component-scan >
 </beans>
