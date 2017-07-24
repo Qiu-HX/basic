@@ -61,3 +61,8 @@ typings/
 *.iml
 .idea
 .idea/
+target
+/dal/target/
+/framework/target/
+/manage/manage-biz/target/
+/manage/manage-web/target/
