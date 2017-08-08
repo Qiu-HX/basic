@@ -15,10 +15,6 @@
         <!-- pikaqiu -->
         <dependency>
             <groupId>com.pikaqiu.basic</groupId>
-            <artifactId>framework</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.pikaqiu.basic</groupId>
             <artifactId>dal</artifactId>
         </dependency>
 

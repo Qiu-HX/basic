@@ -1,26 +1,17 @@
 package com.pikaqiu.dal.mapper;
 
-import com.basi.ebuy.model.SysUser;
-import org.apache.ibatis.annotations.Param;
+import com.pikaqiu.dal.model.sysUser;
 
-import java.util.List;
+public interface sysUserMapper {
+    int deleteByPrimaryKey(Integer userId);
 
-public interface SysUserMapper {
+    int insert(sysUser record);
 
+    int insertSelective(sysUser record);
 
-    int insert(SysUser record);
+    sysUser selectByPrimaryKey(Integer userId);
 
-    SysUser getUserByName(@Param("username") String username);
+    int updateByPrimaryKeySelective(sysUser record);
 
-    int update(SysUser record);
-
-    List<SysUser> getUsers(@Param("searchKey") String searchKey);
-
-    SysUser getUserById(@Param("userId") int userId);
-
-    void deleteByUserId(@Param("userId") int userId);
-
-    void enableUser(@Param("userId") int userId, @Param("enable") boolean enable);
-
-    List<SysUser> getUserByRoleName(@Param("roleName") String roleName);
+    int updateByPrimaryKey(sysUser record);
 }

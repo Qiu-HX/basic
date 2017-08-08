@@ -9,9 +9,7 @@
     <!-- Spring 配置 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>
-            classpath*:/applicationContext.xml
-        </param-value>
+        <param-value>classpath*:/applicationContext.xml</param-value>
     </context-param>
     <!-- 监听servletContext，启动contextConfigLocation中的spring配置信息 -->
     <listener>
@@ -66,7 +64,7 @@
         <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
 
-    <!-- swagger jersey API文档总是与API定义同步更新 -->
+    <!-- swagger jersey API文档总是与API定义同步更新 http://IP:PROT/swagger/index.html -->
     <servlet>
         <servlet-name>Jersey2Config</servlet-name>
         <servlet-class>io.swagger.jersey.config.JerseyJaxrsConfig</servlet-class>
@@ -80,4 +78,35 @@
         </init-param>
         <load-on-startup>3</load-on-startup>
     </servlet>
+
+    <!-- Druid监控配置 http://IP:PROT/druid/index.html -->
+    <servlet>
+        <servlet-name>DruidStatView</servlet-name>
+        <servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DruidStatView</servlet-name>
+        <url-pattern>/druid/*</url-pattern>
+    </servlet-mapping>
+    <!-- filter 可以监控webURl访问 -->
+    <filter>
+        <filter-name>druidWebStatFilter</filter-name>
+        <filter-class>com.alibaba.druid.support.http.WebStatFilter</filter-class>
+        <init-param>
+            <param-name>exclusions</param-name>
+            <param-value>*.js,*.css,*.gif,*.jpg,*.png,/druid/*,/api/*</param-value>
+        </init-param>
+        <init-param>
+            <param-name>principalSessionName</param-name>
+            <param-value>sessionInfo</param-value>
+        </init-param>
+        <init-param>
+            <param-name>profileEnable</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>druidWebStatFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 </web-app>
