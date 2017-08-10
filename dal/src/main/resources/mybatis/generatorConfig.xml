@@ -38,7 +38,7 @@
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.pikaqiu.dal.mapper"  targetProject="src/main/java"/>
 
         <!-- 列出要生成代码的所有表 -->
-        <table tableName="sys_user" domainObjectName="sysUser"
+        <table tableName="sys_user" domainObjectName="SysUser"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"/>

@@ -1,16 +1,17 @@
 package com.pikaqiu.manage.web.rest.resource;
 
+import com.pikaqiu.dal.model.SysUser;
 import com.pikaqiu.fwk.common.Error;
 import com.pikaqiu.fwk.exception.BusinessException;
+import com.pikaqiu.manage.biz.service.SysUserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -22,6 +23,9 @@ import javax.ws.rs.core.Response;
 @Produces({MediaType.APPLICATION_JSON})
 @Api(value = "/hello", description = "hello Resource API")
 public class HelloResource {
+
+    @Autowired
+    private SysUserService sysUserService;
 
     @GET
     @Path("login")
@@ -38,5 +42,14 @@ public class HelloResource {
         String resp = "rest login ok!";
 
         return Response.ok(resp).build();
+    }
+
+    @POST
+    @Path("insert")
+    @ApiOperation(value = "新增运维用户接口", httpMethod = "POST")
+    @ApiResponses(value = {@ApiResponse(code = 200, message = "运维用户新增成功")})
+    public Response login(SysUser sysUser) {
+        sysUserService.insertUser(sysUser);
+        return Response.ok().build();
     }
 }

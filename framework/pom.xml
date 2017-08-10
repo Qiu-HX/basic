@@ -9,6 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>framework</artifactId>
+    <packaging>jar</packaging>
 
     <dependencies>
 
@@ -44,6 +45,12 @@
         <dependency>
             <groupId>io.swagger</groupId>
             <artifactId>swagger-jersey2-jaxrs</artifactId>
+        </dependency>
+
+        <!-- java对象和json相互转化 -->
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
         </dependency>
 
     </dependencies>

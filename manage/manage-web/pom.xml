@@ -25,10 +25,10 @@
             <artifactId>javax.servlet-api</artifactId>
         </dependency>
 
-        <!-- spring的依赖包 -->
+        <!-- spring相关 -->
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
+            <artifactId>spring-aop</artifactId>
         </dependency>
 
         <!-- spring的持久层依赖 -->

@@ -48,10 +48,10 @@
     <!-- spring和MyBatis整合，使用mybatis-plus的sqlSessionFactory -->
     <bean id="sqlSessionFactory" class="com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <!-- 自动扫描mapping.xml文件，**表示迭代查找 -->
-        <property name="mapperLocations" value="classpath:mybatis/mapper/*.xml"/>
         <!-- 配置 Mybatis 配置文件（可无） -->
         <property name="configLocation"  value="classpath:mybatis/mybatis-config.xml"/>
+        <!-- 自动扫描mapping.xml文件，**表示迭代查找 -->
+        <property name="mapperLocations" value="classpath:mybatis/mapper/*.xml"/>
 
         <!-- 以上配置和传统 Mybatis 一致，以下为MP功能配置 -->
 
@@ -96,7 +96,7 @@
 
     <!-- DAO接口所在包名，Spring会自动查找其下的类 ,包下的类需要使用@MapperScan注解,否则容器注入会失败 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.pikaqiu.dal.mapper.*"/>
+        <property name="basePackage" value="com.pikaqiu.dal.mapper"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 
