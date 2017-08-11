@@ -1,0 +1,32 @@
+
+archetypeCatalog=internal
+
+后端：
+Intellij新建Maven项目
+basic：总工程，进行所有模块和包管理
+	framework：
+		jersey--exception	//jersey统一异常处理
+
+	dal：依赖 framework
+		model
+		mapper (mybatis)	//mybatis.generator maven插件自动生成model和mapper
+
+	manage：
+		manage-biz：依赖 dal
+			service
+			impl
+			test (JUnit4)
+			
+		manage-web：依赖 manage-biz
+			rest (jersey)
+			controller (springMVC)
+			webapp (thymeleaf)
+
+			
+前端：
+manage：
+	js：
+		jquery  	提供给其它js依赖
+		layer		各种弹窗，提示（需依赖jquery）
+	css：
+		bootstrap
