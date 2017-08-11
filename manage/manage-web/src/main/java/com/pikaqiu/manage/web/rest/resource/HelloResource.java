@@ -48,7 +48,7 @@ public class HelloResource {
     @Path("insert")
     @ApiOperation(value = "新增运维用户接口", httpMethod = "POST")
     @ApiResponses(value = {@ApiResponse(code = 200, message = "运维用户新增成功")})
-    public Response login(SysUser sysUser) {
+    public Response insert(SysUser sysUser) {
         sysUserService.insertUser(sysUser);
         return Response.ok().build();
     }
