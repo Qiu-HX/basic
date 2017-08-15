@@ -20,8 +20,8 @@ import static org.junit.Assert.*;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:manage-biz-config-test.xml"})
-//事务关联到配置文件中的事务控制器（txManager），同时指定自动回滚（defaultRollback = true）。这样做操作的数据才不会污染数据库！
-@TransactionConfiguration(transactionManager = "txManager")
+//事务关联到配置文件中的事务控制器（transactionManager），同时指定自动回滚（defaultRollback = true）。这样做操作的数据才不会污染数据库！
+@TransactionConfiguration(transactionManager = "transactionManager")
 public class SysUserServiceImplTest {
     @Autowired
     private SysUserService sysUserService;
