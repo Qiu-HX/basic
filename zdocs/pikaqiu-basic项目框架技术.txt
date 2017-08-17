@@ -1,7 +1,7 @@
 
 archetypeCatalog=internal
 
-后端：
+后端：spring + springMVC + mybatis
 Intellij新建Maven项目
 basic：总工程，进行所有模块和包管理
 	framework：
@@ -18,8 +18,9 @@ basic：总工程，进行所有模块和包管理
 			test (JUnit4)
 			
 		manage-web：依赖 manage-biz
+		    controller (springMVC)
+		    logback (logback)
 			rest (jersey)
-			controller (springMVC)
 			webapp (thymeleaf)
 
 			
@@ -27,6 +28,6 @@ basic：总工程，进行所有模块和包管理
 manage：
 	js：
 		jquery  	提供给其它js依赖
-		layer		各种弹窗，提示（需依赖jquery）
+		layer		各种弹窗、提示（需依赖jquery）
 	css：
 		bootstrap

@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.Rollback;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
@@ -22,6 +23,7 @@ import static org.junit.Assert.*;
 @ContextConfiguration(locations = {"classpath:manage-biz-config-test.xml"})
 //事务关联到配置文件中的事务控制器（transactionManager），同时指定自动回滚（defaultRollback = true）。这样做操作的数据才不会污染数据库！
 @TransactionConfiguration(transactionManager = "transactionManager")
+@ActiveProfiles("test")
 public class SysUserServiceImplTest {
     @Autowired
     private SysUserService sysUserService;

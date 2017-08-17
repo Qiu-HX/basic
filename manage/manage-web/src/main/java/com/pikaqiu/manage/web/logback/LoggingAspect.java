@@ -8,7 +8,6 @@ import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Arrays;
@@ -17,7 +16,6 @@ import java.util.Arrays;
  * Created by user on 2017/8/14.
  */
 @Aspect
-@Component
 public class LoggingAspect {
 
     private Logger logger = LoggerFactory.getLogger(LoggerFactory.class);

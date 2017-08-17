@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 public class HelloController {
 
     @RequestMapping("/login")
-    public ModelAndView index() {
+    public ModelAndView login() {
         ModelAndView mav = new ModelAndView("login");
         return mav;
     }
