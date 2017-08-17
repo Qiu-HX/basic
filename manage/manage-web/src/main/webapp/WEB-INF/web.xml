@@ -11,6 +11,11 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath*:/applicationContext.xml</param-value>
     </context-param>
+    <!-- 为上下文设置默认的profile -->
+    <context-param>
+        <param-name>spring.profiles.default</param-name>
+        <param-value>pro</param-value>
+    </context-param>
     <!-- 监听servletContext，启动contextConfigLocation中的spring配置信息 -->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -41,6 +46,11 @@
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath*:/spring-servlet.xml</param-value>
+        </init-param>
+        <!-- 为Servlet设置默认的profile -->
+        <init-param>
+            <param-name>spring.profiles.default</param-name>
+            <param-value>pro</param-value>
         </init-param>
         <load-on-startup>2</load-on-startup>
     </servlet>
