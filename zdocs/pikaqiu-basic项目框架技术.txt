@@ -1,8 +1,9 @@
 
 archetypeCatalog=internal
 
-后端：spring + springMVC + mybatis
 Intellij新建Maven项目
+
+后端：spring + springMVC + mybatis
 basic：总工程，进行所有模块和包管理
 	framework：
 		jersey--exception	//jersey统一异常处理

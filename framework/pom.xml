@@ -13,6 +13,12 @@
 
     <dependencies>
 
+        <!-- servlet api -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+
         <!-- jersey-spring -->
         <dependency>
             <groupId>org.glassfish.jersey.ext</groupId>

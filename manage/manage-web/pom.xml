@@ -19,12 +19,6 @@
             <artifactId>manage-biz</artifactId>
         </dependency>
 
-        <!-- servlet api -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-        </dependency>
-
         <!-- springMVC依赖 -->
         <dependency>
             <groupId>org.springframework</groupId>

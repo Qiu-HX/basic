@@ -18,4 +18,10 @@ public class HelloController {
         ModelAndView mav = new ModelAndView("login");
         return mav;
     }
+
+    @RequestMapping({"/home", "/index"})
+    public ModelAndView home() {
+        ModelAndView mav = new ModelAndView("index");
+        return mav;
+    }
 }

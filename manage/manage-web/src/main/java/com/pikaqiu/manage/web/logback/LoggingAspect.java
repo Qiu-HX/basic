@@ -20,8 +20,7 @@ public class LoggingAspect {
 
     private Logger logger = LoggerFactory.getLogger(LoggerFactory.class);
 
-    @Pointcut("execution(* com.pikaqiu.manage.web.rest.resource.*.*(..))" +
-            " || execution(* com.pikaqiu.manage.web.controller.*.*(..))")
+    @Pointcut("execution(* com.pikaqiu.manage.web.controller.*.*(..))")
     private void loggingOperation() {}
 
     @Before("loggingOperation()")
