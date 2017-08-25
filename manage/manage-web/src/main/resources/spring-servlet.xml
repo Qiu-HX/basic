@@ -13,21 +13,21 @@
        http://www.springframework.org/schema/aop
        http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <!-- 使用thymeleaf解析 -->
+    <!-- 将逻辑视图名称解析为Thymeleaf模板视图 -->
+    <bean id="thymeleafViewResolver" class="org.thymeleaf.spring3.view.ThymeleafViewResolver">
+        <property name="templateEngine" ref="templateEngine"/>
+        <property name="characterEncoding" value="UTF-8"/>
+    </bean>
+    <!-- 处理模板并渲染结果 -->
+    <bean id="templateEngine" class="org.thymeleaf.spring3.SpringTemplateEngine">
+        <property name="templateResolver" ref="templateResolver"/>
+    </bean>
+    <!-- 加载Thymeleaf模板 -->
     <bean id="templateResolver" class="org.thymeleaf.spring3.templateresolver.SpringResourceTemplateResolver">
         <property name="prefix" value="/WEB-INF/templates/"/>
         <property name="suffix" value=".html"/>
         <property name="templateMode" value="HTML"/>
         <property name="cacheable" value="false"/>
-        <property name="characterEncoding" value="UTF-8"/>
-    </bean>
-
-    <bean id="templateEngine" class="org.thymeleaf.spring3.SpringTemplateEngine">
-        <property name="templateResolver" ref="templateResolver"/>
-    </bean>
-
-    <bean id="thymeleafViewResolver" class="org.thymeleaf.spring3.view.ThymeleafViewResolver">
-        <property name="templateEngine" ref="templateEngine"/>
         <property name="characterEncoding" value="UTF-8"/>
     </bean>
 
@@ -52,4 +52,8 @@
 
     <!-- AOP 启用AspectJ自动代理 -->
     <aop:aspectj-autoproxy/>
+
+    <bean id="loggingAspect" class="com.pikaqiu.manage.web.logback.LoggingAspect"></bean>
+
+    <bean id="controllerExceptionHandler" class="com.pikaqiu.manage.web.util.ControllerExceptionHandler"></bean>
 </beans>

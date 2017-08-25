@@ -47,6 +47,11 @@
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath*:/spring-servlet.xml</param-value>
         </init-param>
+        <!-- 抛出NoHandlerFoundException异常(可捕获 url 404) -->
+        <init-param>
+            <param-name>throwExceptionIfNoHandlerFound</param-name>
+            <param-value>true</param-value>
+        </init-param>
         <!-- 为Servlet设置默认的profile -->
         <init-param>
             <param-name>spring.profiles.default</param-name>

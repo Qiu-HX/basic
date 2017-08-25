@@ -6,6 +6,4 @@
 
     <!-- manage-biz配置 -->
     <import resource="classpath*:manage-biz-config.xml"/>
-
-    <bean id="loggingAspect" class="com.pikaqiu.manage.web.logback.LoggingAspect"></bean>
 </beans>
